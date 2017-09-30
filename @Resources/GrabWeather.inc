@@ -1,6 +1,11 @@
 [WeatherSite]
 UpdateDivider=7200
-;6 seconds * 7200 = 12 hours
+;6000 milliseconds * 7200 = 12 hours
+
+;NOTE: In your main skin, you must create the variables LocationCode and TempUnit
+; Additionally, you must @include GrabWeather.inc AFTER you create those Variables
+;  If you do not, the RegExp will fail and you won't get any data.
+
 Measure=Plugin
 Plugin=WebParser
 URL=http://wxdata.weather.com/wxdata/weather/local/#LocationCode#?cc=*&unit=#TempUnit#&dayf=6

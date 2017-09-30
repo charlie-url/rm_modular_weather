@@ -76,7 +76,10 @@ Implementing weather data in your skin:
 1. Make sure your skin has a @Resources folder in its main directory
 2. Copy GrabWeather.inc to your @Resources (this is mandatory)
 3. Copy the other .inc files you want to your @Resources
-4. In your code, make a [Measure] called [GetModularWeather] and use @include to bring in GrabWeather.inc and your other .inc files.
-4.1 Tutorial here: https://docs.rainmeter.net/tips/include-guide/
-5. Access the data using the [Measures] as normal.
-6. Save and refresh your skin.
+4. In your code, create two variables: LocationCode and TempUnit.
+4.1 Get your LocationCode from weather.com (ex.):https://weather.com/weather/today/l/USTX0270
+4.2 Choose "F" or "M", meaning Fahrenheit or Metric.
+5. In your code, make a [Measure] called [GetModularWeather] and use @include to bring in GrabWeather.inc and your other .inc files.
+5.1 Tutorial here: https://docs.rainmeter.net/tips/include-guide/
+6. Access the data using the [Measures] as normal.
+7. Save and refresh your skin.
