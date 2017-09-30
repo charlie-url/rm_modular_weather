@@ -6,8 +6,9 @@
 -----   Table of Contents  -----
 I.    Overview
 II.   How it works
-III.  Intended Usage
-IV.   File List
+III.  Walkthrough
+IV.   Tutorial
+V.   File List
 
 
 -----   Overview   -----
@@ -43,7 +44,7 @@ StringIndex=26
 > TL;DR: You can import my premade [Measures] instead of trying to guess which StringIndex holds the data that you want. It only takes 1 line of code.
 
 
------   Intended Usage   -----
+-----   Walkthrough   -----
 > I assume that you have understood the section above (in a basic sense).
 
 >TL;DR: WebParser downloads html code from weather.com, picks out 60 relevant words, and assigns each to a "StringIndex" number. You can import my premade [Measures] instead of trying to guess which StringIndex holds the data that you want. It only takes 1 line of code.
@@ -54,8 +55,11 @@ StringIndex=26
 2.2. By default, AllWeatherInfo.inc is used in this skin. This loads all 60 possible data values.
 3. Right-click on the skin and choose "Edit skin". Scroll to the bottom of the code.
 4. Find the line under [GetAll] that says "@include=#@#AllWeatherInfo.inc"
-4.1 "#@#" is interpreted by Rainmeter as the @Resources folder for this skin. Right click on the skin and select the top option (rm_modular_weather) to open the folder for this skin.
-4.2 Open the "@Resources" folder and choose a .inc that has info that you would want. (ex. LocationInfo has information about LocationID, LocationName, Sunrise, and Sunset)
+4.1 "#@#" is interpreted by Rainmeter as the @Resources folder for this skin.
+4.2 Click on "[Click to open @Resources]" and choose a .inc that has info that you would want. (ex. LocationInfo has information about LocationID, LocationName, Sunrise, and Sunset)
 4.3 Back in the code, replace "AllWeatherInfo.inc" with the filename you picked.
 5. Save the document, refresh the skin, and view the Log.
-5.1 There should be less values that before, since AllWeatherInfo isn't the one being loaded.
+5.1 There should be less values than before, since AllWeatherInfo isn't the one being loaded.
+
+
+-----   Tutorial   ------
