@@ -13,6 +13,7 @@ IV.   File List
 -----   Overview   -----
      "Modular Weather Parsing" is a way to quickly and easily get weather data into Rainmeter. The aim for this project is to open up the possibility of weather-based skins to beginners, as well as saving time and simplifying weather implementation or more advanced users.
 
+
 -----   How it works   -----
      There are two things that allow this skin to work. The first is WebParser, which is a built-in plugin that can download web pages. This skin uses WebParser to download html source from a weather.com page. Only a small portion of the html source is useful (the actual weather data). It then uses an option called "RegExp=" to search and capture words at specific locations on the page.
 
@@ -41,4 +42,20 @@ StringIndex=26
 
 > TL;DR: You can import my premade [Measures] instead of trying to guess which StringIndex holds the data that you want. It only takes 1 line of code.
 
+
 -----   Intended Usage   -----
+> I assume that you have understood the section above (in a basic sense).
+
+>TL;DR: WebParser downloads html code from weather.com, picks out 60 relevant words, and assigns each to a "StringIndex" number. You can import my premade [Measures] instead of trying to guess which StringIndex holds the data that you want. It only takes 1 line of code.
+
+1. Load the rm_modular_weather skin. (click the rainmeter icon from your taskbar and Load it from there)
+2. Click on "[Click to view data in the Log]" to see what data is loaded.
+2.1 In the Log, the name of the [Measure] is on the left and the data value is on the right
+2.2. By default, AllWeatherInfo.inc is used in this skin. This loads all 60 possible data values.
+3. Right-click on the skin and choose "Edit skin". Scroll to the bottom of the code.
+4. Find the line under [GetAll] that says "@include=#@#AllWeatherInfo.inc"
+4.1 "#@#" is interpreted by Rainmeter as the @Resources folder for this skin. Right click on the skin and select the top option (rm_modular_weather) to open the folder for this skin.
+4.2 Open the "@Resources" folder and choose a .inc that has info that you would want. (ex. LocationInfo has information about LocationID, LocationName, Sunrise, and Sunset)
+4.3 Back in the code, replace "AllWeatherInfo.inc" with the filename you picked.
+5. Save the document, refresh the skin, and view the Log.
+5.1 There should be less values that before, since AllWeatherInfo isn't the one being loaded.
