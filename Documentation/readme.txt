@@ -20,4 +20,25 @@ IV.   File List
 
      Every capture gets a numerical identifier called "StringIndex" corresponding to the order that it was captured by WebParser. The RegExp in this skin has 60 captures, which I have assigned to descriptively named [Measures].
 
-> TL;DR: WebParser downloads html code from weather.com, picks out 60 relevant words, and assigns each to a "StringIndex" number. I have made each word accessible via named [Measures].
+> TL;DR: WebParser downloads html code from weather.com, picks out 60 relevant words, and assigns each to a "StringIndex" number.
+
+     With only WebParser, if you knew that you wanted the "forecasted low temperature for tomorrow", you could copy the [Measure] that I've already created that says...
+
+[Day2LowTemp]
+Measure=Plugin
+Plugin=WebParser
+URL=[WeatherSite]
+StringIndex=26
+
+! ! ! BUT WAIT, IT'S EASIER THAN THAT ! ! !
+
+     The second feature of this skin is "@include". Instead of copy/pasting code into your skin, simply @include one of the .inc files from the @Resources folder to gain access to all of the [Measures] inside it. This takes a grand total of: 1 line of code! Continuing with our "forecasted low temperature for tomorrow" example,...
+
+[GetTemps5Days]
+@include=#@#HighLowOnly.ini
+
+     ...will give your skin access to: [CurrentHighTemp], [CurrentLowTemp], [Day1HighTemp], [Day1LowTemp], [Day2HighTemp], .... , [Day5LowTemp]. Now, access the data you want with "[Day2HighTemp]".
+
+> TL;DR: You can import my premade [Measures] instead of trying to guess which StringIndex holds the data that you want. It only takes 1 line of code.
+
+-----   Intended Usage   -----
