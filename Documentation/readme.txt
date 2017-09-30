@@ -49,7 +49,7 @@ StringIndex=26
 
 >TL;DR: WebParser downloads html code from weather.com, picks out 60 relevant words, and assigns each to a "StringIndex" number. You can import my premade [Measures] instead of trying to guess which StringIndex holds the data that you want. It only takes 1 line of code.
 
-1. Load the rm_modular_weather skin. (click the rainmeter icon from your taskbar and Load it from there)
+1. Load the rm_modular_weather skin. (click the Rainmeter icon from your taskbar and Load it from there)
 2. Click on "[Click to view data in the Log]" to see what data is loaded.
 2.1 In the Log, the name of the [Measure] is on the left and the data value is on the right
 2.2. By default, AllWeatherInfo.inc is used in this skin. This loads all 60 possible data values.
@@ -63,3 +63,16 @@ StringIndex=26
 
 
 -----   Tutorial   ------
+> I assume that you have done the walkthrough (successfully).
+
+Picking specific weather data for your skin:
+1. Get to @Resources.
+2. Make a copy of one of the .inc files which has most of the data you'd want.
+3. Delete any [Measures] that you don't want to include.
+4. Copy/paste any [Measures] that you want from other .inc (AllWeatherInfo.inc has all of them)
+5. Save your .inc and then rename it to something new.
+6. Use the method from the tutorial to check your .inc with the Log
+
+Implementing weather data in your skin:
+1. Make sure your skin has a @Resources folder in its main directory
+2. Copy GrabWeather.inc
