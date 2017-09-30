@@ -1,5 +1,6 @@
 [WeatherSite]
 UpdateDivider=7200
+;6 seconds * 7200 = 12 hours
 Measure=Plugin
 Plugin=WebParser
 URL=http://wxdata.weather.com/wxdata/weather/local/#LocationCode#?cc=*&unit=#TempUnit#&dayf=6
