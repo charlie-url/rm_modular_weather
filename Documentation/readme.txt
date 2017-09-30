@@ -35,8 +35,8 @@ StringIndex=26
 
      The second feature of this skin is "@include". Instead of copy/pasting code into your skin, simply @include one of the .inc files from the @Resources folder to gain access to all of the [Measures] inside it. This takes a grand total of: 1 line of code! Continuing with our "forecasted low temperature for tomorrow" example,...
 
-[GetTemps5Days]
-@include=#@#HighLowOnly.ini
+[GetTemps]
+@include=#@#TemperatureInfo.ini
 
      ...will give your skin access to: [CurrentHighTemp], [CurrentLowTemp], [Day1HighTemp], [Day1LowTemp], [Day2HighTemp], .... , [Day5LowTemp]. Now, access the data you want with "[Day2HighTemp]".
 
