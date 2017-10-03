@@ -57,4 +57,46 @@ Now, access the data you want with `[Day2HighTemp]`.
 More on this later on in the readme.  
 
 
-> TL;DR: You can import the premade [Measures] instead of trying to guess which StringIndex holds the data that you want. It only takes 1 line of code.
+> TL;DR: You can import the premade [Measures] instead of trying to guess which StringIndex holds the data that you want. It only takes 1 line of code.  
+
+Walkthrough  
+-----------  
+> I assume that you have understood the section above (in a basic sense).  
+
+>TL;DR: WebParser downloads html code from weather.com, picks out 60 relevant words, and assigns each to a "StringIndex" number. You can import premade [Measures] instead of trying to guess which StringIndex holds the data that you want. It only takes 1 line of code.  
+
+1. Load the __rm_modular_weather__ skin. (click the Rainmeter icon from your taskbar and Load it from there)  
+2. Click on _[Click to view data in the Log]_ to see what data is loaded.  
+  2.1 In the Log, the name of the [Measure] is on the left and the data value is on the right  
+  2.2. By default, __AllWeatherInfo.inc__ is used in this skin. This loads _all 60_ possible data values.  
+3. Right-click on the skin and choose __Edit skin__. Scroll to the bottom of the code.  
+4. Find the line under __[GetAll]__ that says `@include=#@#AllWeatherInfo.inc`  
+  4.1 `#@#` is interpreted by Rainmeter as the __@Resources__ folder for this skin.  
+  4.2 Click on _[Click to open @Resources]_ and choose a __.inc__ that has info that you would want. (ex. __LocationInfo__ has information about LocationID, LocationName, Sunrise, and Sunset)  
+  4.3 Back in the code, replace `AllWeatherInfo.inc` with the filename you picked.  
+5. Save the document, refresh the skin, and view the Log.  
+  5.1 There should be less values than before, since __AllWeatherInfo__ isn't being loaded.  
+
+
+Tutorial  
+-------
+
+#### Choosing your data  
+1. Get to __@Resources__.  
+2. Make a copy of one of the __.inc__ files which has most of the data you'd want.  
+3. Delete any [Measures] that you don't want to include.  
+4. Copy/paste any [Measures] that you want from other __.inc__ (__AllWeatherInfo.inc__ has all of them)  
+5. Save your __.inc__ and then rename it to something new.  
+6. Use the method from the walkthrough to check your __.inc__ with the Log  
+
+#### Implementing in skins    
+1. Make sure your skin has a __@Resources__ folder in its main directory  
+2. Copy GrabWeather.inc to your __@Resources__ (this is mandatory)  
+3. Copy the other __.inc__ files you want to your __@Resources__  
+4. In your code, create two variables: `LocationCode` and `TempUnit`.  
+  4.1 Get your `LocationCode` from weather.com   (ex.):https://weather.com/weather/today/l/__USTX0270__  
+  4.2 Choose `F` or `M`, meaning Fahrenheit or Metric.  
+5. In your code, make a [Measure] called `[GetModularWeather]` and use `@include` to bring in __GrabWeather.inc__ and your other __.inc__ files.  
+  5.1 [Tutorial on @include](https://docs.rainmeter.net/tips/include-guide/)  
+6. Access the data using the [Measures] as normal.  
+7. Save and refresh your skin.  
