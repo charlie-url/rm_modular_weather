@@ -73,10 +73,10 @@ Walkthrough
 3. Right-click on the skin and choose __Edit skin__. Scroll to the bottom of the code.  
 4. Find the line under __[GetAll]__ that says `@include=#@#AllWeatherInfo.inc`  
   4.1. `#@#` is interpreted by Rainmeter as the __@Resources__ folder for this skin.  
-  4.2. Click on _[Click to open @Resources]_ and choose a __.inc__ that has info that you would want. 
+  4.2. Click on _[Click to open @Resources]_ and choose a __.inc__ that has info that you would want.   
   4.3. Back in the code, replace `AllWeatherInfo.inc` with the filename you picked.  
 5. Save the document, refresh the skin, and view the Log.  
-  5.1. There should be less values than before, since __AllWeatherInfo__ isn't being loaded.  
+  5.1. There should be fewer values than before, since __AllWeatherInfo__ isn't being loaded.  
 
 
 Tutorial  
@@ -95,9 +95,10 @@ Tutorial
 2. Copy GrabWeather.inc to your __@Resources__ (this is mandatory)  
 3. Copy the other __.inc__ files you want to your __@Resources__  
 4. In your code, create two variables: `LocationCode` and `TempUnit`.  
-  4.1. Get your `LocationCode` from weather.com   (ex.):https://weather.com/weather/today/l/ __USTX0270__  
+  4.1. Get your `LocationCode` from [weather.codes](https://weather.codes/)  
   4.2. Choose `F` or `M`, meaning Fahrenheit or Metric.  
-5. In your code, make a [Measure] called `[GetModularWeather]` and use `@include` to bring in __GrabWeather.inc__ and your other __.inc__ files.  
-  5.1. [Tutorial on @include](https://docs.rainmeter.net/tips/include-guide/)  
+5. In your code, make a [Measure] called `[GetModularWeather]`.  
+  5.1. Use `@include` to bring in __GrabWeather.inc__ and your other __.inc__ files.  
+  5.2. [Tutorial on @include](https://docs.rainmeter.net/tips/include-guide/)  
 6. Access the data using the [Measures] as normal.  
 7. Save and refresh your skin.  
