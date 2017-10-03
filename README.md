@@ -14,7 +14,7 @@ Table of Contents
 
 
 Overview
---------
+--------  
   "Modular Weather Parsing" is a way to quickly and easily get weather data into Rainmeter. The aims for this project are to open up the possibility of weather-based skins to beginners, as well as to save time and simplify weather implementation for more advanced users.  
 
 How it Works  
@@ -47,7 +47,8 @@ The second feature of this skin is `@include`. Instead of copy/pasting code into
 [GetTemps]  
 @include=#@#TemperatureInfo.ini  
 ```  
-will give your skin access to:
+will give your skin access to:  
+
 |        | Current | Day 1 | Day 2 | ... | Day 5 |  
 |:------:|:-------:|:-----:|:-----:|:---:|:-----:|    
 |__High__|[CurrentHighTemp]|[Day1HighTemp]|[Day2HighTemp]|...|[Day5HighTemp]|
@@ -67,15 +68,15 @@ Walkthrough
 
 1. Load the __rm_modular_weather__ skin. (click the Rainmeter icon from your taskbar and Load it from there)  
 2. Click on _[Click to view data in the Log]_ to see what data is loaded.  
-  2.1 In the Log, the name of the [Measure] is on the left and the data value is on the right  
+  2.1. In the Log, the name of the [Measure] is on the left and the data value is on the right  
   2.2. By default, __AllWeatherInfo.inc__ is used in this skin. This loads _all 60_ possible data values.  
 3. Right-click on the skin and choose __Edit skin__. Scroll to the bottom of the code.  
 4. Find the line under __[GetAll]__ that says `@include=#@#AllWeatherInfo.inc`  
-  4.1 `#@#` is interpreted by Rainmeter as the __@Resources__ folder for this skin.  
-  4.2 Click on _[Click to open @Resources]_ and choose a __.inc__ that has info that you would want. (ex. __LocationInfo__ has information about LocationID, LocationName, Sunrise, and Sunset)  
-  4.3 Back in the code, replace `AllWeatherInfo.inc` with the filename you picked.  
+  4.1. `#@#` is interpreted by Rainmeter as the __@Resources__ folder for this skin.  
+  4.2. Click on _[Click to open @Resources]_ and choose a __.inc__ that has info that you would want. (ex. __LocationInfo__ has information about LocationID, LocationName, Sunrise, and Sunset)  
+  4.3. Back in the code, replace `AllWeatherInfo.inc` with the filename you picked.  
 5. Save the document, refresh the skin, and view the Log.  
-  5.1 There should be less values than before, since __AllWeatherInfo__ isn't being loaded.  
+  5.1. There should be less values than before, since __AllWeatherInfo__ isn't being loaded.  
 
 
 Tutorial  
@@ -94,9 +95,9 @@ Tutorial
 2. Copy GrabWeather.inc to your __@Resources__ (this is mandatory)  
 3. Copy the other __.inc__ files you want to your __@Resources__  
 4. In your code, create two variables: `LocationCode` and `TempUnit`.  
-  4.1 Get your `LocationCode` from weather.com   (ex.):https://weather.com/weather/today/l/__USTX0270__  
-  4.2 Choose `F` or `M`, meaning Fahrenheit or Metric.  
+  4.1. Get your `LocationCode` from weather.com   (ex.):https://weather.com/weather/today/l/__USTX0270__  
+  4.2. Choose `F` or `M`, meaning Fahrenheit or Metric.  
 5. In your code, make a [Measure] called `[GetModularWeather]` and use `@include` to bring in __GrabWeather.inc__ and your other __.inc__ files.  
-  5.1 [Tutorial on @include](https://docs.rainmeter.net/tips/include-guide/)  
+  5.1. [Tutorial on @include](https://docs.rainmeter.net/tips/include-guide/)  
 6. Access the data using the [Measures] as normal.  
 7. Save and refresh your skin.  
