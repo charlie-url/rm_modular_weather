@@ -21,7 +21,7 @@ How it Works
 ------------  
 
 #### WebParser
-There are two things that allow this skin to work. The first is WebParser, which is a built-in plugin that can download web pages. This skin uses WebParser to download html source from a _weather.com_ page. Only a small portion of the html source is the actual weather data. The option `RegExp=` searches and captures words at specific locations on the page.  
+There are two things that allow this skin to work. The first is WebParser, which is a built-in plugin that can download web pages. This skin uses WebParser to download html source from a weather.com page. Only a small portion of the html source is the actual weather data. The option `RegExp=` searches and captures words at specific locations on the page.  
 
  Just as an example, `RegExp= <temp>(.*)<\/temp>` will tell WebParser to find `<temp>` and capture until it encounters `</temp>`. If the web page had looked like: `<temp>54°</temp>`, it would have captured __54°__, which is important data we can use.  
 
@@ -73,7 +73,7 @@ Walkthrough
 3. Right-click on the skin and choose __Edit skin__. Scroll to the bottom of the code.  
 4. Find the line under __[GetAll]__ that says `@include=#@#AllWeatherInfo.inc`  
   4.1. `#@#` is interpreted by Rainmeter as the __@Resources__ folder for this skin.  
-  4.2. Click on _[Click to open @Resources]_ and choose a __.inc__ that has info that you would want. (ex. __LocationInfo__ has information about LocationID, LocationName, Sunrise, and Sunset)  
+  4.2. Click on _[Click to open @Resources]_ and choose a __.inc__ that has info that you would want. 
   4.3. Back in the code, replace `AllWeatherInfo.inc` with the filename you picked.  
 5. Save the document, refresh the skin, and view the Log.  
   5.1. There should be less values than before, since __AllWeatherInfo__ isn't being loaded.  
@@ -95,7 +95,7 @@ Tutorial
 2. Copy GrabWeather.inc to your __@Resources__ (this is mandatory)  
 3. Copy the other __.inc__ files you want to your __@Resources__  
 4. In your code, create two variables: `LocationCode` and `TempUnit`.  
-  4.1. Get your `LocationCode` from weather.com   (ex.):https://weather.com/weather/today/l/__USTX0270__  
+  4.1. Get your `LocationCode` from weather.com   (ex.):https://weather.com/weather/today/l/ __USTX0270__  
   4.2. Choose `F` or `M`, meaning Fahrenheit or Metric.  
 5. In your code, make a [Measure] called `[GetModularWeather]` and use `@include` to bring in __GrabWeather.inc__ and your other __.inc__ files.  
   5.1. [Tutorial on @include](https://docs.rainmeter.net/tips/include-guide/)  
