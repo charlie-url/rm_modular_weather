@@ -1,4 +1,4 @@
-[WeatherSite]
+[WeatherAll]
 UpdateDivider=7200
 ;6000 milliseconds * 7200 = 12 hours
 
@@ -6,8 +6,10 @@ UpdateDivider=7200
 ; Additionally, you must @include GrabWeather.inc AFTER you create those Variables
 ;  If you do not, the RegExp will fail and you won't get any data.
 
+; Due to the 99 substrings limit of WebParser this measure fetches the entire webpage while subsequent measures parse it in pieces
+
 Measure=Plugin
 Plugin=WebParser
-URL=http://wxdata.weather.com/wxdata/weather/local/#LocationCode#?cc=*&unit=#TempUnit#&dayf=6
-RegExp=(?siU)<\/head>(?#STARTS MATCHING AT THE END OF THE HEADER).*(?#START LOCATION DETAILS)id="(.*)">.*<dnam>(.*),.*<sunr>(.*)<\/sunr>.*<suns>(.*)<\/suns>(?#END OF LOCATION DETAILS).*(?#START OF CURRENT CONDITIONS)<cc>.*<tmp>(.*)<\/tmp>.*<flik>(.*)<\/flik>.*<t>(.*)<\/t>.*<icon>(.*)<\/icon>.*<wind>.*<s>(.*)<\/s>.*<d>(.*)<\/d>.*<t>(.*)<\/t>.*<hmid>(.*)<\/hmid>.*<vis>(.*)<\/vis>.*(?#END OF CURRENT CONDITIONS)<\/cc>.*<dayf>.*(?#START OF DAY 0)<day d="0".*<hi>(.*)<\/hi>.*<low>(.*)<\/low>.*part p="d">.*<\/part>.*<part p="n">.*<\/part>.*(?#END OF DAY 0)<\/day>.*(?#START OF DAY 1)<day d="1".*<hi>(.*)<\/hi>.*<low>(.*)<\/low>.*<part p="d">.*<icon>(.*)<\/icon>.*<t>(.*)<\/t>.*<wind>.*<s>(.*)<\/s>.*<d>(.*)<\/d>.*<t>(.*)<\/t>.*<\/wind>.*<ppcp>(.*)<\/ppcp>.*<hmid>(.*)<\/hmid>.*<\/part>.*<part p="n">.*<\/part>.*(?#END OF DAY 1)<\/day>.*(?#START OF DAY 2)<day d="2".*<hi>(.*)<\/hi>.*<low>(.*)<\/low>.*<part p="d">.*<icon>(.*)<\/icon>.*<t>(.*)<\/t>.*<wind>.*<s>(.*)<\/s>.*<d>(.*)<\/d>.*<t>(.*)<\/t>.*<\/wind>.*<ppcp>(.*)<\/ppcp>.*<hmid>(.*)<\/hmid>.*<\/part>.*<part p="n">.*<\/part>.*(?#END OF DAY 2)<\/day>.*(?#START OF DAY 3)<day d="3".*<hi>(.*)<\/hi>.*<low>(.*)<\/low>.*<part p="d">.*<icon>(.*)<\/icon>.*<t>(.*)<\/t>.*<wind>.*<s>(.*)<\/s>.*<d>(.*)<\/d>.*<t>(.*)<\/t>.*<\/wind>.*<ppcp>(.*)<\/ppcp>.*<hmid>(.*)<\/hmid>.*<\/part>.*<part p="n">.*<\/part>.*(?#END OF DAY 3)<\/day>.*(?#START OF DAY 4)<day d="4".*<hi>(.*)<\/hi>.*<low>(.*)<\/low>.*<part p="d">.*<icon>(.*)<\/icon>.*<t>(.*)<\/t>.*<wind>.*<s>(.*)<\/s>.*<d>(.*)<\/d>.*<t>(.*)<\/t>.*<\/wind>.*<ppcp>(.*)<\/ppcp>.*<hmid>(.*)<\/hmid>.*<\/part>.*<part p="n">.*<\/part>.*(?#END OF DAY 4)<\/day>.*(?#START OF DAY 5)<day d="5".*<hi>(.*)<\/hi>.*<low>(.*)<\/low>.*<part p="d">.*<icon>(.*)<\/icon>.*<t>(.*)<\/t>.*<wind>.*<s>(.*)<\/s>.*<d>(.*)<\/d>.*<t>(.*)<\/t>.*<\/wind>.*<ppcp>(.*)<\/ppcp>.*<hmid>(.*)<\/hmid>.*<\/part>.*<part p="n">.*<\/part>.*(?#END OF DAY 5)<\/day>.*<\/dayf>
+URL=http://wxdata.weather.com/wxdata/weather/local/#LocationCode#?cc=*&unit=#TempUnit#&dayf=11
+RegExp=(?siU)^(.*)$
 DynamicVariables=1
